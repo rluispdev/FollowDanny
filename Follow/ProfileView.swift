@@ -11,32 +11,52 @@ import SwiftUI
 //MARK: - VIEW
 struct ProfileView: View {
     
- @State var viewModel = ProfileViewModel()
-
-    
+    @State var viewModel = ProfileViewModel()
     var body: some View {
         VStack {
-            ///Perfil
-            Image(viewModel.user.picture)
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: 250, height: 250)
-                .padding(.bottom, 50)
-                
-            Text(viewModel.user.name)
-                .font(.system(size: 40, weight: .bold))
-            
-            Text(viewModel.user.nick)
-                .font(.system(size:23, weight: .regular))
-                .foregroundStyle(.gray)
-            
-            Text("\(viewModel.userFollowers)")
-                .font(.system(size: 60, weight: .light))
-                .padding(40)
+            ProfileDataView()
+            ActionView()
         }
-        .padding()
         
-        VStack {
+    }
+}
+    
+    #Preview {
+        ProfileView()
+        
+    }
+
+
+struct ProfileDataView: View {
+    @State var viewModel = ProfileViewModel()
+    var body: some View {
+        ///Perfil
+        Image(viewModel.user.picture)
+            .resizable()
+            .aspectRatio(contentMode: .fill)
+            .frame(width: 250, height: 250)
+            .padding(.bottom, 50)
+            
+        Text(viewModel.user.name)
+            .font(.system(size: 40, weight: .bold))
+        
+        Text(viewModel.user.nick)
+            .font(.system(size:23, weight: .regular))
+            .foregroundStyle(.gray)
+        
+        Text("\(viewModel.userFollowers)")
+            .font(.system(size: 60, weight: .light))
+            .padding(40)
+    }
+  
+    }
+    
+
+
+struct ActionView: View {
+    @State var viewModel = ProfileViewModel()
+    var body: some View {
+        VStack{
             ///Seguir
             Button { viewModel.followToogle()} label: {
                 Label (!viewModel.isFollowing ? "follow": "unfollow", systemImage: !viewModel.isFollowing ? "person.fill.badge.plus" : "person.fill.badge.minus" )
@@ -56,11 +76,7 @@ struct ProfileView: View {
             .disabled(!viewModel.isFollowing)
         }
         .padding(20)
-      
     }
-       
-}
-
-#Preview {
-    ProfileView()
+ 
+    
 }
