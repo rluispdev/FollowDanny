@@ -12,7 +12,7 @@ import SwiftUI
 struct ProfileView: View {
     
  @State var viewModel = ProfileViewModel()
-   var isFollowing = false
+   @State var isFollowing = false
     
     var body: some View {
         VStack {
@@ -38,7 +38,7 @@ struct ProfileView: View {
         
         VStack {
             ///Seguir
-            Button { } label: {
+            Button { isFollowing.toggle()} label: {
                 Label ("follow", systemImage: "person.fill.badge.plus" )
                     .frame(maxWidth: .infinity)
             }
@@ -52,7 +52,7 @@ struct ProfileView: View {
             }
             .buttonStyle(.borderedProminent)
             .controlSize(.large)
-            .disabled(true)
+            .disabled(!isFollowing)
         }
         .padding(20)
       
