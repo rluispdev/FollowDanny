@@ -6,34 +6,13 @@
 //
 
 import SwiftUI
-//MARK: -  MODEL
-struct User {
-    
-    var picture: String
-    var name: String
-    var nick: String
-    var followers: Double
-    
-}
-
-//MARK: - VIEWMODEL
-
-struct ProfileViewModel {
-    var user = User(picture: "danny",
-                    name: "Danny Phantom",
-                    nick: "@dannyphantom",
-                    followers: 22_643)
-    
-    mutating func updateUser() {
-        self.user.nick = "@phantom"
-    }
-}
 
 
 //MARK: - VIEW
 struct ProfileView: View {
     
  @State var viewModel = ProfileViewModel()
+   var isFollowing = false
     
     var body: some View {
         VStack {
@@ -59,7 +38,7 @@ struct ProfileView: View {
         
         VStack {
             ///Seguir
-            Button {} label: {
+            Button { } label: {
                 Label ("follow", systemImage: "person.fill.badge.plus" )
                     .frame(maxWidth: .infinity)
             }
@@ -67,7 +46,7 @@ struct ProfileView: View {
             .controlSize(.large)
             
             ///Enviar mensagem
-            Button {} label: {
+            Button { } label: {
                 Label ("enviar mensagem", systemImage: "paperplane.fill" )
                     .frame(maxWidth: .infinity)
             }
@@ -76,10 +55,7 @@ struct ProfileView: View {
             .disabled(true)
         }
         .padding(20)
-        .onAppear{
-            viewModel.updateUser()
-        }
-        
+      
     }
        
 }
