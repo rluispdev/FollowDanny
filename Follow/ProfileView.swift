@@ -23,21 +23,21 @@ struct ProfileView: View {
     var body: some View {
         VStack {
             ///Perfil
-            Image("danny")
+            Image(user.picture)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 250, height: 250)
                 .padding(.bottom, 50)
                 
-            Text("Danny Phantom")
+            Text(user.name)
                 .font(.system(size: 40, weight: .bold))
             
-            Text("@dannyphantom")
+            Text(user.nick)
                 .font(.system(size:23, weight: .regular))
                 .foregroundStyle(.gray)
             
-            Text("22.643K")
-                .font(.system(size: 70, weight: .light))
+            Text("\(user.followers)")
+                .font(.system(size: 60, weight: .light))
                 .padding(40)
         }
         .padding()
