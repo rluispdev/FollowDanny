@@ -14,8 +14,8 @@ struct ProfileView: View {
     @StateObject var viewModel = ProfileViewModel()
     var body: some View {
         VStack {
-            ProfileDataView(viewModel: $viewModel)
-            ActionView(viewModel: $viewModel)
+            ProfileDataView(viewModel: viewModel)
+            ActionView(viewModel: viewModel)
         }
         
     }
@@ -28,7 +28,7 @@ struct ProfileView: View {
 
 
 struct ProfileDataView: View {
-    @Binding var viewModel: ProfileViewModel
+    @ObservedObject var viewModel: ProfileViewModel
     
     var body: some View {
         ///Perfil
@@ -55,7 +55,7 @@ struct ProfileDataView: View {
 
 
 struct ActionView: View {
-    @Binding var viewModel: ProfileViewModel
+    @ObservedObject var viewModel: ProfileViewModel
  
     var body: some View {
         VStack{

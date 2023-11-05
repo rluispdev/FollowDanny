@@ -7,10 +7,10 @@
 
 import Foundation
 //ViewModel
-struct ProfileViewModel {
+class ProfileViewModel: ObservableObject {
     
- var isFollowing = false
- var userFollowers = String()
+ @Published var isFollowing = false
+ @Published var userFollowers = String()
     
     var user = User(picture: "danny",
                     name: "Danny Phantom",
@@ -22,7 +22,7 @@ struct ProfileViewModel {
         loadFollowers()
     }
     
-    mutating func loadFollowers( ) {
+ func loadFollowers( ) {
         self.userFollowers = customizeNumber(value: user.followers)
     }
     
@@ -34,7 +34,7 @@ struct ProfileViewModel {
         return "\(shorten) K"
     }
     
-    mutating func followToogle(){
+ func followToogle(){
         self.isFollowing.toggle()
         self.isFollowing ? (self.user.followers += 1) : (self.user.followers -= 1)
         loadFollowers()
