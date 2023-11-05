@@ -17,6 +17,15 @@ struct ProfileViewModel {
                     nick: "@dannyphantom",
                     followers: 22_643)
     
+    
+    init() {
+        laodFollowers()
+    }
+    
+    mutating func laodFollowers( ) {
+        self.userFollowers = customizeNumber(value: user.followers)
+    }
+    
     func customizeNumber(value: Double) -> String {
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
@@ -25,14 +34,8 @@ struct ProfileViewModel {
         return "\(shorten) K"
     }
     
-    
-    
-    
-   
     mutating func followToogle(){
         self.isFollowing.toggle()
     }
   
-    
-    
 }
