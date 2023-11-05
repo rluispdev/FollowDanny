@@ -15,6 +15,11 @@ struct ProfileViewModel {
                     name: "Danny Phantom",
                     nick: "@dannyphantom",
                     followers: 22_643)
-    
+   
+    mutating func followToogle(){
+        self.isFollowing.toggle()
+    }
   
+    
+    
 }

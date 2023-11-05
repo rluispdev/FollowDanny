@@ -38,7 +38,7 @@ struct ProfileView: View {
         
         VStack {
             ///Seguir
-            Button { isFollowing.toggle()} label: {
+            Button { viewModel.isFollowing.toggle()} label: {
                 Label ("follow", systemImage: "person.fill.badge.plus" )
                     .frame(maxWidth: .infinity)
             }
@@ -52,7 +52,7 @@ struct ProfileView: View {
             }
             .buttonStyle(.borderedProminent)
             .controlSize(.large)
-            .disabled(!isFollowing)
+            .disabled(!viewModel.isFollowing)
         }
         .padding(20)
       
