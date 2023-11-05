@@ -26,20 +26,10 @@ struct ProfileViewModel {
 }
 
 
-
-
-
-
-
-
-
-
-
-
 //MARK: - VIEW
 struct ProfileView: View {
     
- var viewModel = ProfileViewModel()
+ @State var viewModel = ProfileViewModel()
     
     var body: some View {
         VStack {
