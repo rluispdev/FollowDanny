@@ -11,7 +11,7 @@ import SwiftUI
 //MARK: - VIEW
 struct ProfileView: View {
     
-    @State var viewModel = ProfileViewModel()
+    @StateObject var viewModel = ProfileViewModel()
     var body: some View {
         VStack {
             ProfileDataView(viewModel: $viewModel)
