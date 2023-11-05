@@ -39,25 +39,25 @@ struct ProfileViewModel {
 //MARK: - VIEW
 struct ProfileView: View {
     
- 
+ var viewModel = ProfileViewModel()
     
     var body: some View {
         VStack {
             ///Perfil
-            Image(user.picture)
+            Image(viewModel.user.picture)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 250, height: 250)
                 .padding(.bottom, 50)
                 
-            Text(user.name)
+            Text(viewModel.user.name)
                 .font(.system(size: 40, weight: .bold))
             
-            Text(user.nick)
+            Text(viewModel.user.nick)
                 .font(.system(size:23, weight: .regular))
                 .foregroundStyle(.gray)
             
-            Text("\(user.followers)")
+            Text("\(viewModel.user.followers)")
                 .font(.system(size: 60, weight: .light))
                 .padding(40)
         }
