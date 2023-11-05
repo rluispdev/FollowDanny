@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+//MARK: -  MODEL
 struct User {
     
     var picture: String
@@ -15,7 +15,7 @@ struct User {
     var followers: Double
     
 }
-
+//MARK: - VIEW
 struct ProfileView: View {
     
  var user = User(picture: "danny", name: "Danny Phantom", nick: "@dannyphantom", followers: 22_643)
