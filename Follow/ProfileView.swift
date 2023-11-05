@@ -23,6 +23,10 @@ struct ProfileViewModel {
                     name: "Danny Phantom",
                     nick: "@dannyphantom",
                     followers: 22_643)
+    
+    mutating func updateUser() {
+        self.user.nick = "@phantom"
+    }
 }
 
 
@@ -72,7 +76,12 @@ struct ProfileView: View {
             .disabled(true)
         }
         .padding(20)
+        .onAppear{
+            viewModel.updateUser()
+        }
+        
     }
+       
 }
 
 #Preview {
