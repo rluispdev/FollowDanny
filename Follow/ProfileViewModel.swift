@@ -19,10 +19,10 @@ struct ProfileViewModel {
     
     
     init() {
-        laodFollowers()
+        loadFollowers()
     }
     
-    mutating func laodFollowers( ) {
+    mutating func loadFollowers( ) {
         self.userFollowers = customizeNumber(value: user.followers)
     }
     
@@ -36,6 +36,8 @@ struct ProfileViewModel {
     
     mutating func followToogle(){
         self.isFollowing.toggle()
+        self.isFollowing ? (self.user.followers += 1) : (self.user.followers -= 1)
+        loadFollowers()
     }
   
 }

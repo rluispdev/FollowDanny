@@ -30,7 +30,7 @@ struct ProfileView: View {
                 .font(.system(size:23, weight: .regular))
                 .foregroundStyle(.gray)
             
-            Text("\(viewModel.user.followers)")
+            Text("\(viewModel.userFollowers)")
                 .font(.system(size: 60, weight: .light))
                 .padding(40)
         }
