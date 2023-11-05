@@ -15,10 +15,31 @@ struct User {
     var followers: Double
     
 }
+
+//MARK: - VIEWMODEL
+
+struct ProfileViewModel {
+    var user = User(picture: "danny",
+                    name: "Danny Phantom",
+                    nick: "@dannyphantom",
+                    followers: 22_643)
+}
+
+
+
+
+
+
+
+
+
+
+
+
 //MARK: - VIEW
 struct ProfileView: View {
     
- var user = User(picture: "danny", name: "Danny Phantom", nick: "@dannyphantom", followers: 22_643)
+ 
     
     var body: some View {
         VStack {
