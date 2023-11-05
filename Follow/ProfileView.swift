@@ -12,7 +12,7 @@ import SwiftUI
 struct ProfileView: View {
     
  @State var viewModel = ProfileViewModel()
-   @State var isFollowing = false
+
     
     var body: some View {
         VStack {

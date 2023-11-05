@@ -8,6 +8,9 @@
 import Foundation
 //ViewModel
 struct ProfileViewModel {
+    
+ var isFollowing = false
+    
     var user = User(picture: "danny",
                     name: "Danny Phantom",
                     nick: "@dannyphantom",
