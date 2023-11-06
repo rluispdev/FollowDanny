@@ -36,6 +36,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8F0D1EF82AF8FECE00B2D251 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8F0D1EF92AF8FEE300B2D251 /* Shared */,
+				8F0D1EFA2AF8FEF000B2D251 /* Screens */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		8F0D1EF92AF8FEE300B2D251 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Shared;
+			sourceTree = "<group>";
+		};
+		8F0D1EFA2AF8FEF000B2D251 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				8F0D1EFB2AF8FF0500B2D251 /* ProfileView */,
+			);
+			name = Screens;
+			sourceTree = "<group>";
+		};
+		8F0D1EFB2AF8FF0500B2D251 /* ProfileView */ = {
+			isa = PBXGroup;
+			children = (
+				8FA67AC52AF6C92D002CD562 /* ProfileView.swift */,
+				8FDE08112AF7FCD700D0871E /* ProfileViewModel.swift */,
+			);
+			name = ProfileView;
+			sourceTree = "<group>";
+		};
+		8F0D1EFC2AF8FF3100B2D251 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8FD65E4F2AF7FE4900950853 /* User.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		8F0D1EFD2AF8FF4900B2D251 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8FA67AC72AF6C92D002CD562 /* Assets.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		8FA67AB72AF6C92D002CD562 = {
 			isa = PBXGroup;
 			children = (
@@ -56,10 +105,9 @@
 			isa = PBXGroup;
 			children = (
 				8FA67AC32AF6C92D002CD562 /* FollowApp.swift */,
-				8FA67AC52AF6C92D002CD562 /* ProfileView.swift */,
-				8FDE08112AF7FCD700D0871E /* ProfileViewModel.swift */,
-				8FD65E4F2AF7FE4900950853 /* User.swift */,
-				8FA67AC72AF6C92D002CD562 /* Assets.xcassets */,
+				8F0D1EF82AF8FECE00B2D251 /* View */,
+				8F0D1EFC2AF8FF3100B2D251 /* Model */,
+				8F0D1EFD2AF8FF4900B2D251 /* Resources */,
 				8FA67AC92AF6C92D002CD562 /* Preview Content */,
 			);
 			path = Follow;
