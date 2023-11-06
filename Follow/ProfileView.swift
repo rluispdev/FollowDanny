@@ -11,20 +11,19 @@ import SwiftUI
 //MARK: - VIEW
 struct ProfileView: View {
     
-    @StateObject var viewModel = ProfileViewModel()
+    @EnvironmentObject var viewModel: ProfileViewModel
     var body: some View {
         VStack {
             ProfileDataView()
             ActionView( )
         }
-        .environmentObject(viewModel)
     }
 }
     #Preview {
         ProfileView()
+            .environmentObject(ProfileViewModel())
         
     }
-
 
 struct ProfileDataView: View {
   @EnvironmentObject var viewModel: ProfileViewModel

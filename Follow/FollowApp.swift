@@ -12,6 +12,7 @@ struct FollowApp: App {
     var body: some Scene {
         WindowGroup {
             ProfileView()
+                .environmentObject(ProfileViewModel())
         }
     }
 }
