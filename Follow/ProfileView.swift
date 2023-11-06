@@ -17,6 +17,7 @@ struct ProfileView: View {
             ProfileDataView()
             ActionView( )
         }
+        .animation(.easeOut, value: viewModel.isFollowing)
     }
 }
     #Preview {
@@ -45,7 +46,7 @@ struct ProfileDataView: View {
         
         Text("\(viewModel.userFollowers)")
             .font(.system(size: 60, weight: .light))
-            .padding(40)
+            .padding(viewModel.isFollowing ? 40: 25)
     }
   
     }
