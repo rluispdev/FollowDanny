@@ -14,13 +14,12 @@ struct ProfileView: View {
     @StateObject var viewModel = ProfileViewModel()
     var body: some View {
         VStack {
-            ProfileDataView(viewModel: viewModel)
-            ActionView(viewModel: viewModel)
+            ProfileDataView()
+            ActionView( )
         }
-        
+        .environmentObject(viewModel)
     }
 }
-    
     #Preview {
         ProfileView()
         
@@ -28,7 +27,7 @@ struct ProfileView: View {
 
 
 struct ProfileDataView: View {
-    @ObservedObject var viewModel: ProfileViewModel
+  @EnvironmentObject var viewModel: ProfileViewModel
     
     var body: some View {
         ///Perfil
@@ -55,7 +54,7 @@ struct ProfileDataView: View {
 
 
 struct ActionView: View {
-    @ObservedObject var viewModel: ProfileViewModel
+@EnvironmentObject var viewModel: ProfileViewModel
  
     var body: some View {
         VStack{
